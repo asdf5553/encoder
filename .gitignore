@@ -1,6 +1,22 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+public String[]  encoder(String [] words)
+{
+  int length = words.length;
+  String[] endit = new String[words.length];
+  for (int q=0; q<length; q++)
+  {
+  String word = words[q];
+  String end="";
+  char[] arr= new char[word.length()];
+  char letter;
+  for (int y=0;y<word.length();y++)
+  {
+     arr[y]= word.charAt(y);
+  }
+  for (int x=0; x<arr.length; x++)
+  {
+  end+= (char)(((arr[x]+10-'A')%26)+'A');
+  }
+  endit[q]= end;
+  }
+  return endit;
+}
